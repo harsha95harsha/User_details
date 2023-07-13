@@ -35,7 +35,7 @@ const upload = multer({ storage })
 
 // Handle file upload
 app.post('/upload', upload.single('file'), (req, res) => {
-  const workbook = xlsx.readFile('C:UsersADMINDesktopTask1User_details')
+  const workbook = xlsx.readFile('./User_details.xlsx')
 
   const sheetName = workbook.SheetNames[0] // Assuming the data is in the first sheet
   const worksheet = workbook.Sheets[sheetName]
